@@ -1,0 +1,59 @@
+{
+    "name": "@ivan_georgiew/eslint-config",
+    "version": "1.0.0",
+    "description": "My sane eslint config",
+    "private": false,
+    "main": "lib/index.js",
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "require": "./lib/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "prepare": "husky install",
+        "preinstall": "npx only-allow pnpm",
+        "preversion": "pnpm i && pnpm lint && git add -A",
+        "postversion": "git push && pnpm publish --access public",
+        "bump": "pnpm version patch",
+        "bigbump": "pnpm version minor",
+        "lint:prettier": "prettier --write --loglevel warn \"lib/**/*.{js,json,md}\"",
+        "lint:eslint": "eslint \"lib/**/*.js\"",
+        "lint": "pnpm lint:prettier && pnpm lint:eslint",
+        "test": "node ./lib/test.js"
+    },
+    "prettier": "@ivan_georgiew/prettier-config",
+    "engines": {
+        "node": ">=12.22.0"
+    },
+    "keywords": [
+        "eslint",
+        "eslintconfig"
+    ],
+    "author": "Ivan Georgiev <ivan_georgiew@yahoo.com>",
+    "license": "MIT",
+    "repository": "github:ivangeorgiew/eslint-config",
+    "bugs": "https://github.com/ivangeorgiew/eslint-config/issues",
+    "homepage": "https://github.com/ivangeorgiew/eslint-config#readme",
+    "peerDependencies": {
+        "eslint": ">=7.30.0"
+    },
+    "dependencies": {
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-compat": "^3.13.0",
+        "eslint-plugin-ecmalist": "^1.0.7",
+        "eslint-plugin-import": "^2.24.2",
+        "eslint-plugin-promise": "^5.1.0",
+        "eslint-plugin-regexp": "^1.0.0"
+    },
+    "devDependencies": {
+        "@ivan_georgiew/prettier-config": "^1.0.3",
+        "eslint": "^7.32.0",
+        "husky": "^7.0.0",
+        "prettier": "^2.3.2"
+    }
+}
