@@ -1,6 +1,6 @@
 {
     "name": "@ivan_georgiew/eslint-config",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "My sane eslint config",
     "private": false,
     "main": "lib/index.js",
