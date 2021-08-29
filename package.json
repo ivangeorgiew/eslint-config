@@ -1,6 +1,6 @@
 {
     "name": "@ivan_georgiew/eslint-config",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "My sane eslint config",
     "private": false,
     "sideEffects": false,
